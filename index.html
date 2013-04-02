@@ -46,9 +46,9 @@
 // here you are just outputting RDF from some data inside your database
 $users = getUsersFromDb();
 foreach($users as $user) {
-	echo $user->URI . ' http://xmlns.com/foaf/0.1/name ' . $user->name . ' .';
-	echo $user->URI . ' http://xmlns.com/foaf/0.1/surname ' . $user->lastname . ' .';
-	echo $user->URI . ' http://xmlns.com/foaf/0.1/phone ' . $user->phonenumb . ' .';
+  echo $user->URI . ' http://xmlns.com/foaf/0.1/name ' . $user->name . ' .';
+  echo $user->URI . ' http://xmlns.com/foaf/0.1/surname ' . $user->lastname . ' .';
+  echo $user->URI . ' http://xmlns.com/foaf/0.1/phone ' . $user->phonenumb . ' .';
 }
 ?&gt;</code></pre>
 	</div>
