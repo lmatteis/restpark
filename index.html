@@ -43,15 +43,15 @@
 		
 		<h2>What!? Example please!</h2>
 		<pre><code>
-			<?php
-			// here you are just outputting RDF from some data inside your database
-			$users = getUsersFromDb();
-			foreach($users as $user) {
-				echo $user->URI . ' http://xmlns.com/foaf/0.1/name ' . $user->name . ' .';
-				echo $user->URI . ' http://xmlns.com/foaf/0.1/surname ' . $user->lastname . ' .';
-				echo $user->URI . ' http://xmlns.com/foaf/0.1/phone ' . $user->phonenumb . ' .';
-			}
-			?>
+		<?php
+		// here you are just outputting RDF from some data inside your database
+		$users = getUsersFromDb();
+		foreach($users as $user) {
+			echo $user->URI . ' http://xmlns.com/foaf/0.1/name ' . $user->name . ' .';
+			echo $user->URI . ' http://xmlns.com/foaf/0.1/surname ' . $user->lastname . ' .';
+			echo $user->URI . ' http://xmlns.com/foaf/0.1/phone ' . $user->phonenumb . ' .';
+		}
+		?>
 		</code></pre>
 	</div>
 	<div style="text-align: center;" about="http://lmatteis.github.com/restpark/" rel="dcterms:conformsTo" resource="http://www.w3.org/TR/rdfa-syntax">
