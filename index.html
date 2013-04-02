@@ -28,10 +28,19 @@
 		<p>
 		SPARQL is quite complex, and to implement it on top of existing storage solutions you need to use a proper triple store (RDF database), and be sure it implements all of SPARQL features correctly.</p>
 
-<p>Wouldn't it be better to have a lightweight version of SPARQL which developers could implement themselves on top of their existing storage solutions (MySQL, PostgreSQL, MongoDB, etc.) using whichever language they please (PHP, Java, Node.js)?</p>
+		<p>Wouldn't it be interesting to have a lightweight alternative to SPARQL which developers could implement themselves on top of their existing storage solution (MySQL, MongoDB, etc.) using the language they please (PHP, Java, Node.js)?</p>
 
-<p>This is what Restpark is. A common RESTful API for querying RDF triples. You essentially query data such as <code>/endpoint?s=subject&amp;p=predicate&amp;o=object</code> and get the results back in JSON. No weird SPARQL syntax. No more complexities!
-</p>
+		<p>This is what Restpark is.</p>
+		
+		<h2>Query parameters</h2>
+		<p>All you really need to do is handle some basic HTTP GET request parameters:</p>
+		<ul>
+			<li><code>?s</code> to match a subject</li>
+			<li><code>?p</code> to match a predicate, and</li>
+			<li><code>?o</code> to match an object</li>
+		</ul>
+		<p>Therefore a Restpark compatible query would look like <code>/endpoint?s={subject}&p={predicate}&o={object}</code></p>
+		
 	</div>
 	<div style="text-align: center;" about="http://lmatteis.github.com/restpark/" rel="dcterms:conformsTo" resource="http://www.w3.org/TR/rdfa-syntax">
 		<a href="http://validator.w3.org/check?uri=http://lmatteis.github.com/restpark/"><img style="border: 0px solid white;" src="http://www.w3.org/Icons/valid-xhtml-rdfa" alt="Valid XHTML + RDFa"   /></a>
