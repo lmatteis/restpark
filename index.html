@@ -42,7 +42,7 @@
 		<p>Therefore a Restpark compatible query would look like <code>/endpoint?s={subject}&p={predicate}&o={object}</code></p>
 		
 		<h2>What!? Example please!</h2>
-		<code>
+		<pre><code>
 			<?php
 			// here you are just outputting RDF from some data inside your database
 			$users = getUsersFromDb();
@@ -52,7 +52,7 @@
 				echo $user->URI . ' http://xmlns.com/foaf/0.1/phone ' . $user->phonenumb . ' .';
 			}
 			?>
-		</code>
+		</code></pre>
 	</div>
 	<div style="text-align: center;" about="http://lmatteis.github.com/restpark/" rel="dcterms:conformsTo" resource="http://www.w3.org/TR/rdfa-syntax">
 		<a href="http://validator.w3.org/check?uri=http://lmatteis.github.com/restpark/"><img style="border: 0px solid white;" src="http://www.w3.org/Icons/valid-xhtml-rdfa" alt="Valid XHTML + RDFa"   /></a>
