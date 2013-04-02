@@ -28,7 +28,7 @@
 		<p>
 		SPARQL is quite complex, and to implement it on top of existing storage solutions you need to use a proper triple store (RDF database), and be sure it implements all of SPARQL features correctly.</p>
 
-<p>Wouldn't it be better to have a lightweight version of SPARQL which developers could implement themselves on top of their existing storage solutions (MySQL, PostgreSQL, MongoDB, etc.)?</p>
+<p>Wouldn't it be better to have a lightweight version of SPARQL which developers could implement themselves on top of their existing storage solutions (MySQL, PostgreSQL, MongoDB, etc.) using whichever language they please (PHP, Java, Node.js)?</p>
 
 <p>This is what Restpark is. A common RESTful API for querying RDF triples. You essentially query data such as <code>/endpoint?s=subject&amp;p=predicate&amp;o=object</code> and get the results back in JSON. No weird SPARQL syntax. No more complexities!
 </p>
