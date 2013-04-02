@@ -1,50 +1,139 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <title>Restpark by lmatteis</title>
-  </head>
 
-  <body>
-    <div id="container">
-      <div class="inner">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:xsd ="http://www.w3.org/2001/XMLSchema#"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"  
+  xmlns:vcard="http://www.w3.org/2006/vcard/ns#"
+  xmlns:ov="http://open.vocab.org/terms/"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+  xmlns:google="http://rdf.data-vocabulary.org/rdf.xml#">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The Pedantic Web Group</title>
+	<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" />
+</head>
+<body about="http://lmatteis.github.com/restpark/#" typeof="foaf:Group" id="homepage">
+	<div id="intro">
+		<h1>Welcome to the Pedantic Web Group</h1>
+		<ul id="quicklinks">
+		  <li><a href="news.html">News</a></li>
+		  <li><a href="http://groups.google.com/group/pedantic-web">Mailing list</a></li>
+		  <li><a href="tools.html">Tools/validators</a></li>
+		  <li><a href="fops.html">FOPs</a></li>
+		</ul>
+		<img src="./dilbert.png" alt="dilbert" />
+		<dl>
+			<dt><a href="http://en.wiktionary.org/wiki/pedantic">pe⋅dan⋅tic /pəˈdæntɪk/</a></dt>
+			<dd>overly concerned with formal rules and trivial points of learning</dd>
+		</dl>
+		<span rel="foaf:homepage" resource="http://pedantic-web.org/" property="foaf:name" content="Pedantic Web Group"></span>
+		<span rel="owl:sameAs" resource="http://semanticweb.org/id/Pedantic_Web"></span>
+	</div>
+	<div id="main">
+		<h2>Your data is broken.</h2>
+		<p>
+			You publish RDF data on the web, and thereby contribute to our shared passion: 
+			the emerging global information space that we call the web of data. 
+			Thank you for that! Thank you for sharing your data!
+		</p>
+		<p>
+			But your data is broken. Syntax errors, unescaped characters, encoding problems, 
+			broken links, ambiguous identifiers, undefined vocabulary terms, mismatched semantics,
+			unintended inferences: If you publish anything on the web of data, chances are that 
+			there is some problem.
+		</p>
+		<h2>We want you to fix your data.</h2>
+		<p>
+			We understand that your time is limited. We understand that the standards are complex
+			and it's hard to get things right. We understand that the tools you used are buggy,
+			and that the documentation is poor, and that data publishing is still a trial and error
+			process. We understand that this might be just a side project for you. That's why we are here.
+			Nevertheless, we want you to fix your data.
+		</p>
+		<p property="rdfs:comment">
+			The Pedantic Web Group is a loosely organised group of practitioners whose projects
+			and products rely on the quality of the data that's out there. We work with data publishers, 
+			tool builders, application developers and standards groups towards an interoperable Web of Data.
+		</p>
+		<h2>Resources</h2>		
+		<ul>
+			<li><a href="fops.html">Frequently observed problems on the web of data</a></li>
+			<li><a href="tools.html">Validators and other tools</a></li>
+			<li><a href="http://groups.google.com/group/pedantic-web/topics">pedantic-web mailing list archives</a></li>
+		</ul>
+		<h2>Active participants</h2>
+		<ul>
+			<li rel="foaf:member">
+				<a	about="http://sw.deri.org/~aidanh/foaf/foaf.rdf#Aidan_Hogan" typeof="foaf:Person"
+				 	href="http://sw.deri.org/~aidanh/" rel="foaf:homepage" property="foaf:name">Aidan Hogan</a>
+			</li>
+			<li rel="foaf:member">
+				<a	about="http://apassant.net/alex" typeof="foaf:Person"
+				 	href="http://apassant.net/" rel="foaf:homepage" property="foaf:name">Alexandre Passant</a>
+			</li>
+			<li rel="foaf:member">
+				<a	about="http://harth.org/andreas/foaf#ah" typeof="foaf:Person"
+				 	href="http://harth.org/andreas/" rel="foaf:homepage" property="foaf:name">Andreas Harth</a>
+			</li>
+			<li rel="foaf:member">
+				<a	about="http://zimmer.aprilfoolsreview.com/antoine#me" typeof="foaf:Person"
+				 	href="http://zimmer.aprilfoolsreview.com/" rel="foaf:homepage" property="foaf:name">Antoine Zimmermann</a>
+			</li>
+			<li rel="foaf:member">
+				<a	about="http://www.polleres.net/foaf.rdf#me" typeof="foaf:Person"
+				 	href="http://www.polleres.net/" rel="foaf:homepage" property="foaf:name">Axel Polleres</a>
+			</li>
+			<li rel="foaf:member">
+				<a	about="http://sw-app.org/mic.xhtml#i" typeof="foaf:Person"
+				 	href="http://sw-app.org/about.html" rel="foaf:homepage" property="foaf:name">Michael Hausenblas</a>
+			</li>
+			<li rel="foaf:member">
+				<a	about="http://richard.cyganiak.de/#me" typeof="foaf:Person"
+				 	href="http://richard.cyganiak.de/" rel="foaf:homepage" property="foaf:name">Richard Cyganiak</a>
+			</li>
+			<li rel="foaf:member">
+				<a	about="http://www.deri.ie/about/team/member/Stéphane_Corlosquet#me" typeof="foaf:Person"
+				 	href="http://openspring.net/" rel="foaf:homepage" property="foaf:name">Stéphane Corlosquet</a>
+			</li>
+		</ul>
+		<h2 id="rules">Getting involved</h2>
+		<ol>
+			<li>
+				Sign up to the <a href="http://groups.google.com/group/pedantic-web/">pedantic-web mailing list</a> 
+				via the <a href="http://groups.google.com/group/pedantic-web/subscribe">web interface</a> or by emailing
+				<a href="mailto:pedantic-web+subscribe@googlegroups.com">pedantic-web+subscribe@googlegroups.com</a>
+			</li>
+			<li>
+				If you encounter a suspected interoperability problem in someone else's data or tool, 
+				and want confirmation of the problem, please feel free to contact the list.
+			</li>
+			<li>
+				If you engage with a data publisher about an interoperability problem, please cc the list;
+				this helps us to co-ordinate efforts.
+			</li>
+      <li>
+        Individual group members <em>may</em> respond to requests for review of
+        RDF data that you have published on the Web.
+      </li>
+      <li>
+        Note that the mailing list is <em>not</em> a general discussion
+        list or Q&amp;A board, and we discourage any traffic that is not
+        directly concerned with fixing problems with data that is already
+        published on the Web. Most importantly, <em>do not cross-post</em>
+        discussions between pedantic-web and other mailing lists.
+      </li>
+		</ol>
+	</div>
+	<div style="text-align: center;" about="http://lmatteis.github.com/restpark/" rel="dcterms:conformsTo" resource="http://www.w3.org/TR/rdfa-syntax">
+		<a href="http://validator.w3.org/check?uri=http://lmatteis.github.com/restpark/"><img style="border: 0px solid white;" src="http://www.w3.org/Icons/valid-xhtml-rdfa" alt="Valid XHTML + RDFa"   /></a>
+	</div>
 
-        <header>
-          <h1>Restpark</h1>
-          <h2>Common RESTful API for querying RDF triples</h2>
-        </header>
 
-        <section id="downloads" class="clearfix">
-          <a href="https://github.com/lmatteis/restpark/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
-          <a href="https://github.com/lmatteis/restpark/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
-          <a href="https://github.com/lmatteis/restpark" id="view-on-github" class="button"><span>View on GitHub</span></a>
-        </section>
-
-        <hr>
-
-        <section id="main_content">
-          <p>SPARQL is quite complex, and to implement it on top of existing storage solutions you need to use a proper triple store (RDF database), and be sure it implements all of SPARQL features correctly.</p>
-
-<p>Wouldn't it be better to have a lightweight version of SPARQL which developers could implement themselves on top of their existing storage solutions (MySQL, PostgreSQL, MongoDB, etc.)?</p>
-
-<p>This is what Restpark is. A common RESTful API for querying RDF triples. You essentially query data such as <code>/endpoint?s=subject&amp;p=predicate&amp;o=object</code> and get the results back in JSON. No weird SPARQL syntax. No more complexities!</p>
-        </section>
-
-        <footer>
-          Restpark is maintained by <a href="https://github.com/lmatteis">lmatteis</a><br>
-          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.
-        </footer>
-
-        
-      </div>
-    </div>
-  </body>
+    </body>
 </html>
+
