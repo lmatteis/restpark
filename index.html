@@ -41,7 +41,7 @@
 		</ul>
 		<p>Therefore a Restpark compatible query would look like <code>/endpoint?s={subject}&p={predicate}&o={object}</code></p>
 		
-		<h2>What!? Example please!</h2>
+		<h2>Example please!</h2>
 		<pre><code>&lt;?php
 // here you are just outputting RDF from some data inside your database
 $users = getUsersFromDb();
@@ -49,6 +49,13 @@ foreach($users as $user) {
   echo $user->URI . ' http://xmlns.com/foaf/0.1/name ' . $user->name . ' .';
   echo $user->URI . ' http://xmlns.com/foaf/0.1/surname ' . $user->lastname . ' .';
   echo $user->URI . ' http://xmlns.com/foaf/0.1/phone ' . $user->phonenumb . ' .';
+}
+
+// and here you are supporting Restpark, so people can query your data
+// probably better to do the filtering directly within the database query
+// but this is just an example to illustrate the point
+foreach($users as $user) {
+  if($_GET['s'] && $user->URI == $_GET['s'])
 }
 ?&gt;</code></pre>
 	</div>
