@@ -29,6 +29,14 @@
 		<p>Just imagine if RDF resources were published this way, you could quickly build applications that depend on these datasets, without having to download and process them locally.</p>
 		<p>This is what Restpark is. Essentially a set of HTTP GET parameters that you need to handle, and respond with JSON.</p>
 		
+		
+		<h2>Why?</h2>
+		<p>
+		SPARQL is quite complex, and to implement it on top of existing storage solutions you need to use a proper triple store (RDF database such as Jena), and be sure it implements all of SPARQL features correctly.</p>
+
+		<p>Having a lightweight alternative to SPARQL which developers could implement themselves on top of their existing storage solution (MySQL, MongoDB, etc.) using the language they want (PHP, Java, Node.js), would lower the entry barrier for Semantic Web data understanding and retrieval.</p>
+
+		
 		<h2>Query parameters</h2>
 		<ul>
 			<li><code>?subject</code> to match a subject</li>
@@ -39,6 +47,7 @@
 
 		</ul>
 		<p>Therefore a Restpark compatible query would look like <br><code>/restpark?subject={subject}&predicate={predicate}&object={object}</code></p>
+		
 		
 		
 	</div>
