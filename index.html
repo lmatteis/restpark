@@ -38,14 +38,36 @@
 
 		
 		<h2>Query parameters</h2>
-		<ul>
-			<li><code>?subject</code> to match a subject</li>
-			<li><code>?predicate</code> to match a predicate</li>
-			<li><code>?object</code> to match an object</li>
-			<li><code>?limit</code> to limit the result</li>
-			<li><code>?offset</code> to offset the result</li>
-
-		</ul>
+		<table rules="all">
+  <tbody><tr><th>Parameter</th><th>Value</th><th>Description</th></tr>
+  <tr>
+  	<td><tt>subject</tt></td>
+  	<td><tt>URI of subject</tt></td>  
+  	<td>Used to match a subject</td>
+  </tr>
+  <tr>
+  	<td><tt>predicate</tt></td>
+  	<td><tt>URI of predicate</tt></td>  
+  	<td>Used to match a predicate</td>
+  </tr>
+  <tr>
+  	<td><tt>object</tt></td>
+  	<td><tt>URI of object or literal</tt></td>  
+  	<td>Used to match an object such as a string</td>
+  </tr>
+  <tr>
+  	<td><tt>limit</tt></td>
+  	<td><tt>number</tt></td>  
+  	<td>Limit the number of triples in the result</td>
+  </tr>
+  <tr>
+  	<td><tt>offset</tt></td>
+  	<td><tt>number</tt></td>  
+  	<td>Skip <i>n</i> number of triples</td>
+  </tr>
+  
+</tbody></table>
+	
 		<p>Therefore a Restpark compatible query would look like <br><code>/restpark?subject={subject}&predicate={predicate}&object={object}</code></p>
 		
 		
