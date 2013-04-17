@@ -70,11 +70,32 @@
 			</blockquote>
 		</p>
 		
+
+        <h2>Examples</h2>
+		<p><i>Get the birthdays (DBpedia) of people who acted in Star Trek (LinkedMDB)</i></p>
+        <p>1) Let's first query LinkedMDB to get all the names of the actors of Star Trek</p>
+        <blockquote>
+			<pre><code>
+http://data.linkedmdb.org/restpark
+    ?subject=http://data.linkedmdb.org/resource/film/675
+            </code></pre>
+		</blockquote>
+        <p>This will return a JSON that we can parse and extract the actor name (http://data.linkedmdb.org/resource/movie/actor_name).</p>
+        <p>2) Now let's query DBpedia to get all the actors information (from the actor name we just retrieved above)</p>
+        <blockquote>
+			<pre><code>
+http://dbpedia.org/restpark
+    &object="William Shatner"
+            </code></pre>
+		</blockquote>
 	</div>
+
+
 	<div style="text-align: center;" about="http://lmatteis.github.io/restpark/" rel="dcterms:conformsTo" resource="http://www.w3.org/TR/rdfa-syntax">
 		<a href="http://validator.w3.org/check?uri=http://lmatteis.github.io/restpark/"><img style="border: 0px solid white;" src="http://www.w3.org/Icons/valid-xhtml-rdfa" alt="Valid XHTML + RDFa"   /></a>
 	</div>
 
     </body>
 </html>
+
 
