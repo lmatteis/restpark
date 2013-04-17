@@ -76,16 +76,14 @@
         <p>1) Let's first query LinkedMDB to get all the names of the actors of Star Trek</p>
         <blockquote>
 			<code>
-http://data.linkedmdb.org/restpark
-    ?subject=http://data.linkedmdb.org/resource/film/675
+http://data.linkedmdb.org/restpark?subject=http://data.linkedmdb.org/resource/film/675
             </code>
 		</blockquote>
         <p>This will return a JSON that we can parse and extract the actor name (http://data.linkedmdb.org/resource/movie/actor_name).</p>
         <p>2) Now let's query DBpedia to get all the actors information (from the actor name we just retrieved above)</p>
         <blockquote>
 			<code>
-http://dbpedia.org/restpark
-    &object="William Shatner"
+http://dbpedia.org/restpark&object="William Shatner"
             </code>
 		</blockquote>
 	</div>
