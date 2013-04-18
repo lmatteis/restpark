@@ -83,12 +83,43 @@ http://data.linkedmdb.org/restpark?subject=http://data.linkedmdb.org/resource/fi
         <p>2) Now let's query DBpedia to get all the actors information (from the actor name we just retrieved above)</p>
         <blockquote>
 			<code>
-http://dbpedia.org/restpark&object="William Shatner"
+http://dbpedia.org/restpark?object="William Shatner"
             </code>
 		</blockquote>
 		<p>In this example you can see how the link (or foreign key) between the two datasets is the actor name, a literal. This method is not very accurate for linking two (or more) datasets: the literal might be slightly different between the two datasets resulting in inaccurate joins of data.</p> 
-		<p>The best way would be for LinkedMDB to provide a link (URI) to DBpedia. In the next example we will use <code>owl:sameAs</code> to illustrate how more accurate links can be made between various datasets</p>
+		<p>The best way would be for LinkedMDB to provide a link (URI) to DBpedia. In the next example we will use <code>owl:sameAs</code> to illustrate how more accurate links can be made between various datasets.</p>
 		
+		
+		<p><i>Get me the papers (DBLP) of Fellows of the British Computer Society (DBpedia).</i></p>
+		<p>1) Let's first get all the Fellows from DBpedia:</p>
+
+		<blockquote>
+			<code>
+http://dbpedia.org/restpark
+	?predicate=http://purl.org/dc/terms/subject
+	&object=http://dbpedia.org/resource/Category:Fellows_of_the_British_Computer_Society
+            </code>
+		</blockquote>
+		
+		<p>2) Now that we have a list of all the Fellows from DBpedia, we want to know if these Fellows have any external linkages. We essentially need to find out if they have an <code>owl:sameAs</code> predicate. For each of the Fellow returned above, we run this query:</p>
+		
+		<blockquote>
+			<code>
+http://dbpedia.org/restpark
+	?subject=http://dbpedia.org/page/Tim_Berners-Lee
+	&predicate=http://www.w3.org/2002/07/owl#sameAs
+            </code>
+		</blockquote>
+		
+		<p>Great! Now we have a list of URIs that represent external resources. Given the initial question, we're specifically interested in resources from the DBLP dataset. So we can simply filter the result and only use URIs that are from DBLP.</p>
+		<p>3) We can finally run another query on the DBLP dataset, since we have the URI, to extract the paper information of the Fellow we retrieved in the earlier step:</p>
+		
+		<blockquote>
+			<code>
+http://www4.wiwiss.fu-berlin.de/dblp/restpark
+	?subject=http://www4.wiwiss.fu-berlin.de/dblp/Tim_Berners-Lee
+            </code>
+		</blockquote>
 	</div>
 
 
