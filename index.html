@@ -86,6 +86,9 @@ http://data.linkedmdb.org/restpark?subject=http://data.linkedmdb.org/resource/fi
 http://dbpedia.org/restpark&object="William Shatner"
             </code>
 		</blockquote>
+		<p>In this example you can see how the link (or foreign key) between the two datasets is the actor name, a literal. This method is not very accurate for linking two (or more) datasets: the literal might be slightly different between the two datasets resulting in inaccurate joins of data.</p> 
+		<p>The best way would be for LinkedMDB to provide a link (URI) to DBpedia. In the next example we will use <code>owl:sameAs</code> to illustrate how more accurate links can be made between various datasets</p>
+		
 	</div>
 
 
