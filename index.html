@@ -13,7 +13,7 @@
   xmlns:google="http://rdf.data-vocabulary.org/rdf.xml#">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Restpark - Minimal RESTful API for querying RDF triples</title>
+  <title>Restpark - Minimal RESTful API for retrieving RDF triples</title>
 	<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" />
 </head>
 <body about="http://lmatteis.github.io/restpark/#" typeof="foaf:Group" id="homepage">
@@ -24,7 +24,7 @@
 		
 	</div>
 	<div id="main">
-		<h2>Minimal RESTful API for querying RDF triples</h2>
+		<h2>Minimal RESTful API for retrieving RDF triples</h2>
 		<p>How do triple (RDF) datasets currently get published on the Web? They're either available as large <code>.rdf</code> files, which need to be downloaded and processed locally, or they exist behind complex SPARQL endpoints. By providing a RESTful API of your triple data, you allow users to access and query it through a simple interface based on just a couple of HTTP parameters.</p>
 		<p>Just imagine if RDF resources were published this way: you could quickly build applications that depend on these datasets, without having to download and process them locally.</p>
 		<p>This is what Restpark is. Essentially a set of HTTP GET parameters that you need to handle, and respond with JSON (be nice and provide also a JSONP callback).</p>
