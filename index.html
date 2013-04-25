@@ -18,12 +18,110 @@
 </head>
 <body about="http://lmatteis.github.io/restpark/#" typeof="foaf:Group" id="homepage">
 	<div id="intro">
-		<h1>The Restpark idea was about creating a minimal RESTful API for querying RDF triples.
-		We realize that this goal is already widely achieved by the Linked Data Initiative.</h1>
+		<h1>Welcome to Restpark</h1>
 
+		<img src="restpark.jpg" alt="restpark" />
+		
 	</div>
-	
+	<div id="main">
+		<h2>Minimal RESTful API for querying RDF triples</h2>
+		<p>How do triple (RDF) datasets currently get published on the Web? They're either available as large <code>.rdf</code> files, which need to be downloaded and processed locally, or they exist behind complex SPARQL endpoints. By providing a RESTful API of your triple data, you allow users to access and query it through a simple interface based on just a couple of HTTP parameters.</p>
+		<p>Just imagine if RDF resources were published this way: you could quickly build applications that depend on these datasets, without having to download and process them locally.</p>
+		<p>This is what Restpark is. Essentially a set of HTTP GET parameters that you need to handle, and respond with JSON (be nice and provide also a JSONP callback).</p>
+		
+		
+		<h2>Why?</h2>
+		<p>
+		SPARQL is quite complex, and to implement it on top of existing storage solutions you need to use a proper triple store (RDF database such as Virtuoso), and be sure it implements all of SPARQL features correctly.</p>
+
+		<p>Having a lightweight alternative to SPARQL which developers could implement themselves on top of their existing storage solution (MySQL, MongoDB, etc.) using the language they want (PHP, Java, Node.js), would lower the entry barrier for Semantic Web data understanding and retrieval.</p>
+
+		
+		<h2>Query parameters</h2>
+		<p>
+		<table rules="all">
+  <tbody><tr><th>Parameter</th><th>Value</th><th>Description</th></tr>
+  <tr>
+  	<td><tt>subject</tt></td>
+  	<td><tt>URI of subject</tt></td>  
+  	<td>Used to match a subject</td>
+  </tr>
+  <tr>
+  	<td><tt>predicate</tt></td>
+  	<td><tt>URI of predicate</tt></td>  
+  	<td>Used to match a predicate</td>
+  </tr>
+  <tr>
+  	<td><tt>object</tt></td>
+  	<td><tt>URI of object or literal</tt></td>  
+  	<td>Used to match an object such as a string</td>
+  </tr>
+  <tr>
+  	<td><tt>limit</tt></td>
+  	<td><tt>number</tt></td>  
+  	<td>Limit the number of triples in the result</td>
+  </tr>
+  
+</tbody></table>
+	</p>
+		<p>Therefore a Restpark compatible query would look like:
+			<blockquote>
+			<code>/restpark?subject={subject}&predicate={predicate}&object={object}</code>
+			</blockquote>
+		</p>
+		
+
+        <h2>Examples</h2>
+		<p><i>Get the birthdays (DBpedia) of people who acted in Star Trek (LinkedMDB)</i></p>
+        <p>1) Let's first query LinkedMDB to get all the names of the actors of Star Trek</p>
+        <blockquote>
+			<code>
+http://data.linkedmdb.org/restpark?subject=http://data.linkedmdb.org/resource/film/675
+            </code>
+		</blockquote>
+        <p>This will return a JSON that we can parse and extract the actor name (http://data.linkedmdb.org/resource/movie/actor_name).</p>
+        <p>2) Now let's query DBpedia to get all the actors information (from the actor name we just retrieved above)</p>
+        <blockquote>
+			<code>
+http://dbpedia.org/restpark?object="William Shatner"
+            </code>
+		</blockquote>
+		<p>In this example you can see how the link (or foreign key) between the two datasets is the actor name, a literal. This method is not very accurate for linking two (or more) datasets: the literal might be slightly different between the two datasets resulting in inaccurate joins of data.</p> 
+		<p>The best way would be for LinkedMDB to provide a link (URI) to DBpedia. In the next example we will use <code>owl:sameAs</code> to illustrate how more accurate links can be made between various datasets.</p>
+		
+		
+		<p><i>Get me the papers (DBLP) of Fellows of the British Computer Society (DBpedia).</i></p>
+		<p>1) Let's first get all the Fellows from DBpedia:</p>
+
+		<blockquote>
+			<code>
+http://dbpedia.org/restpark?predicate=http://purl.org/dc/terms/subject&object=http://dbpedia.org/resource/Category:Fellows_of_the_British_Computer_Society
+            </code>
+		</blockquote>
+		
+		<p>2) Now that we have a list of all the Fellows from DBpedia, we want to know if these Fellows have any external linkages. We essentially need to find out if they have an <code>owl:sameAs</code> predicate. For each of the Fellow returned above, we run this query:</p>
+		
+		<blockquote>
+			<code>
+http://dbpedia.org/restpark?subject=http://dbpedia.org/page/Tim_Berners-Lee&predicate=http://www.w3.org/2002/07/owl#sameAs
+            </code>
+		</blockquote>
+		
+		<p>Great! Now we have a list of URIs that represent external resources. Given the initial question, we're specifically interested in resources from the DBLP dataset. So we can simply filter the result and only use URIs that are from DBLP.</p>
+		<p>3) We can finally run another query on the DBLP dataset, since we have the URI, to extract the paper information of the Fellow we retrieved in the earlier step:</p>
+		
+		<blockquote>
+			<code>
+http://www4.wiwiss.fu-berlin.de/dblp/restpark?subject=http://www4.wiwiss.fu-berlin.de/dblp/Tim_Berners-Lee
+            </code>
+		</blockquote>
+	</div>
+
+
+	<div style="text-align: center;" about="http://lmatteis.github.io/restpark/" rel="dcterms:conformsTo" resource="http://www.w3.org/TR/rdfa-syntax">
+		<a href="http://validator.w3.org/check?uri=http://lmatteis.github.io/restpark/"><img style="border: 0px solid white;" src="http://www.w3.org/Icons/valid-xhtml-rdfa" alt="Valid XHTML + RDFa"   /></a>
+	</div>
+
     </body>
 </html>
-
 
